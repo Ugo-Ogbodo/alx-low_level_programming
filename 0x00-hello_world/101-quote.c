@@ -1,12 +1,13 @@
-#include <stdio.h>
 #include <unistd.h>
 /**
  * main - Entry point
- * Return:1
+ *
+ * Return: Always 1 (Success)
  */
 int main(void)
 {
-char og[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-write(2, og, sizeof(og));
-return (1);
+	char og[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+	write(2, og, 59);
+	return (1);
 }

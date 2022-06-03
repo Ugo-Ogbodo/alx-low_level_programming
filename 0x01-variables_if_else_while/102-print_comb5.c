@@ -23,7 +23,7 @@ while (t < 58)
 			{
 				num1 = (t * 10) + u;
 				num2 = (c * 10) + i;
-				if (op1 < op2)
+				if (num1 < num2)
 				{
 					putchar(t);
 					putchar(u);

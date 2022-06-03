@@ -9,6 +9,7 @@ int main(void)
 {
 	int i;
 
+	/*using ASCII representation*/
 	for (i = 48; i < 58; i++)
 	{
 		putchar(i);

@@ -1,21 +1,23 @@
-#include "main.h"
+#include"main.h"
 
 /**
  * main - Entry point
  *
- * Aim: prints _putchar using putchar prototype
+ * Description: prints _putchar using putchar prototype
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-  char boy[] = "_putchar";
-  int re;
+	char num[] = "_putchar";
+	int ad;
 
-  for (re = 0; re < 8; ++re)
-    _putchar(boy[re]);
-  _putchar('\n');
+	for (ad = 0; ad < 8; ++ad)
+		_putchar (num[ad]);
 
-  return (0);
+	_putchar('\n');
+
+	return (0);
 }
+

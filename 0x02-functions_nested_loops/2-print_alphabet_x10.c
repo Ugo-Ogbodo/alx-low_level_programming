@@ -1,24 +1,25 @@
 #include "main.h"
 
 /**
- * _islower - Shows 1 if the input is a
- * lowercase character. Another cases, shows
- * 0
- *
- * @c: The character in ASCII code
- *
- * Return: 1 for lowercase character. 0 for the rest.
+ * print_alphabet_x10 - print alphabet in lowercase 10 times
+ * Return: 0
  */
 
-int _islower(int c)
+void print_alphabet_x10(void)
 {
-	if (c >= 97 && c <= 122)
+	int i = 0;
+	char c;
+
+	while (i < 10)
 	{
-		return (1);
+		c = 'a';
+		while (c <= 'z')
+		{
+			_putchar(c);
+			c++;
+		}
+		_putchar('\n');
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
-	_putchar('\n');
 }
+

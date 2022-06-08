@@ -1,4 +1,5 @@
 Resources
+
 Debugging
 Rubber Duck Debugging
 Piaget's theory of cognitive development

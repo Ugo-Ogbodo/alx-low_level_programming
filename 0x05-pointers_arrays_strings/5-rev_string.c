@@ -5,26 +5,22 @@
  *
  * @s: string parameter input
  *
- * Return: nothing
+ * Return: Nothing
  */
 
 void rev_string(char *s)
 {
-	int l, i, len;
-	char cool;
+	int l, i;
+	char ch;
 
-	while (s[i] != '\0')
-	{
-		cool[i] = s[i];
-		i++;
-	}
-	len = i;
+	for (l = 0; s[l] != '\0'; ++l)
+		;
 
-	while (j <= len - l)
+	for (i = 0; i < l / 2; ++i)
 	{
-		s[i] = cool[i - l];
-		j++;
-		i--;
+		ch = s[i];
+		s[i] = s[l - 1 - i]; /*-1 because the array starts from 0*/
+		s[l - 1 - i] = ch;
 	}
+
 }
-

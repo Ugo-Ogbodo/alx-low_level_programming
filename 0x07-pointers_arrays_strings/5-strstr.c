@@ -10,24 +10,20 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int i = 0, j = 0;
+	char *i, *j;
 
-	while (haystack[i])
+	while (haystack != '\0')
 	{
-		while (needle[j] && (haystack[i] == needle[0]))
+		i = haystack;
+		j = needle;
+		while (*j != '\0' && *haystack == *j)
 		{
-			if (haystack[i] == needle[j])
-				j++;
-			else
-				break;
+			haystack++;
+			n++;
 		}
-		if (needle[j])
-		{
-			i++;
-			j = 0;
-		}
-		else
-			return (haystack + i);
+		if (!*n)
+			return (h);
+		haystack++;
 	}
-	return (0);
+	return ('\0');
 }

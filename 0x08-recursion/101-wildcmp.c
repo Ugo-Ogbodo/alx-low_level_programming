@@ -10,63 +10,64 @@
 
 int wildcmp(char *s1, char *s2)
 {
-	if (*s1 == '\0' && *s2 == '\0')
-		return (1);
-	else if (*s1 == '\0' || *s2 == '\0')
-	{
-		if (*s1 == '\0' && *s2 == '*')
-			return (wildcmp(s1, ++s2));
-		else if (*s1 == '*' && *s2 == '\0')
-			return (wildcmp(++s1, s2));
-		return (0);
-	}
+	return (test(s1, s2, 0, 0, -1));
+}
 
-	if (*s1 == *s2)
-	{
-		return (wildcmp(++s1, ++s2));
-	}
-	else if (*s1 == '*')
-	{
-		if (*(s1 + 1) == '*')
-		{
-			return (wildcmp(++s1, s2));
-		}
-		else
-		{
-			return (wildcmp(s1, check_card(s2, *(s1 + 1), 0, 0) + s2));
-		}
-	}
-	else if (*s2 == '*')
-	{
-		if (*(s2 + 1) == '*')
-		{
-			return (wildcmp(s1, ++s2));
-		}
-		else
-		{
-			return (wildcmp(s1 + check_card(s1, *(s2 + 1), 0, 0), s2));
-		}
-	}
+/**
+ * last_char - check the last char of s2
+ * @s: string
+ * @c: int
+ *
+ * return: 0 if false, 1 if true
+ */
+
+int last_char(char *s, int c)
+{
+	if (s[c] == *)
+		return (last_char(s, c + 1));
+	else if (s[c] == '\0')
+		return (1);
+
 	return (0);
 }
 
 /**
- * check_card - looks for the wild card
- * @s: string, may contain wild card
- * @c: string
+ * test - assist in checking wild cards
+ * @s1: the first string
+ * @s2: the second string
  * @i: int
  * @j: int
+ * @l: int
  *
- * Return: the string or integers
+ * Return: 0
  */
 
-int check_card(char *s, char c, int i, int j)
+int test(char *s1, char *s2, int i, int j, int l)
 {
-	if (*(s + i) == '\0')
-		return (j + 1);
-	else if  (*(s + i) == c || *(s + i) == '*')
-		j = i;
+	if (s1[i] != '\0')
+	{
+		if (s2[j] == '\0')
+			return (0);
+		else if (s2[j] == '*')
+		{
+			if (s2[j + 1] == '*')
+				return (test(s1, s2, i, j + 1, j));
+			else if (s2[j + 1] == s1[i])
+				return (test(s1, s2, i, j + 1, j));
+			else if (s1[i + 1] != s2[j + 1])
+				return (test(s1, s2, i + 1, j, j));
+			else if (s1[i + 1] == s2[j + 1])
+				return (test(s1, s2, i + 1, j + 1, j));
+		}
+		else if ((s1[i] == s2[j]) || (s2[j] == '*' && s2[j + 1] == s1[i + 1]))
+			return (test(s1, s2, i + 1, j + 1, l));
 
-	return (check_card(s, c, i + 1, j));
+		if (l == -1)
+			return (0);
+		return (test(s1, s2, i, j, l));
+	}
+	if (s2[b] != '\0')
+		return (last_char(s2, b));
+
+	return (1);
 }
-

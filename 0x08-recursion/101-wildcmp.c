@@ -44,7 +44,7 @@ int wildcmp(char *s1, char *s2)
 		}
 		else
 		{
-			return (wildcmp(s1 + check_card(s1, *(s1 + 1), 0, 0) + s2));
+			return (wildcmp(s1 + check_card(s1, *(s2 + 1), 0, 0), s2));
 		}
 	}
 	return (0);
@@ -65,8 +65,8 @@ int check_card(char *s, char c, int i, int j)
 	if (*(s + i) == '\0')
 		return (j + 1);
 	else if  (*(s + i) == c || *(s + i) == '*')
-		p = i;
+		j = i;
 
-	return (check_cards(s, c, i + 1, p));
+	return (check_card(s, c, i + 1, j));
 }
 

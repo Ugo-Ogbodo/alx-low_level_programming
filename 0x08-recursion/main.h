@@ -15,5 +15,6 @@ int is_palindrome(char *s);
 int string_len(char *s);
 int recur(char *s, int l);
 int wildcmp(char *s1, char *s2);
+int check_card(char *s, char c, int i, int j);
 
 #endif /* MAIN_H */

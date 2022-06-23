@@ -12,6 +12,8 @@ int nat_square(int i, int j);
 int is_prime_number(int n);
 int primeNum(int num, int prime);
 int is_palindrome(char *s);
+int string_len(char *s);
+int recur(char *s, int l);
 int wildcmp(char *s1, char *s2);
 
 #endif /* MAIN_H */

@@ -23,7 +23,7 @@ int wildcmp(char *s1, char *s2)
 
 int last_char(char *s, int c)
 {
-	if (s[c] == *)
+	if (s[c] == '*')
 		return (last_char(s, c + 1));
 	else if (s[c] == '\0')
 		return (1);
@@ -64,10 +64,10 @@ int test(char *s1, char *s2, int i, int j, int l)
 
 		if (l == -1)
 			return (0);
-		return (test(s1, s2, i, j, l));
+		return (test(s1, s2, i, l, l));
 	}
-	if (s2[b] != '\0')
-		return (last_char(s2, b));
+	if (s2[j] != '\0')
+		return (last_char(s2, j));
 
 	return (1);
 }

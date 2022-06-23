@@ -18,7 +18,7 @@ int wildcmp(char *s1, char *s2)
  * @s: string
  * @c: int
  *
- * return: 0 if false, 1 if true
+ * Return: 0 if false, 1 if true
  */
 
 int last_char(char *s, int c)

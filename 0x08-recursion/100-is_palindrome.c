@@ -28,7 +28,7 @@ int string_len(char *s)
 	if (*s == '\0')
 		return (1);
 	else
-		return (1 + string_length(++s));
+		return (1 + string_len(++s));
 }
 
 /**

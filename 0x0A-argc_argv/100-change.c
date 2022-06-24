@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - prints the minimum number of coins to make change for an amount of money
+ * main - prints the minimum number of coins to make change
  * @argc: number of arguments passed to the function
  * @argv: argument vector of pointers to strings
  *
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 			d = a / c[i];
 			a -= d * c[i];
 			b += d;
-			if (a ==0)
+			if (a == 0)
 				break;
 		}
 	}

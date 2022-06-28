@@ -11,32 +11,21 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, k, l;
-	char *a;
+	int length1 = 0, length2 = 0;
+	char *ret;
 
-	if (s1 == NULL)
-		s1 = " ";
-	if (s2 == NULL)
-		s2 = " ";
-
-	for (i = 0; s1[i] != '\0'; i++)
-		;
-	for (j = 0; s2[j] != '\0'; j++)
-		;
-
-	a = malloc(sizeof(char) * (i + j + 1));
-
-	if (a == NULL)
-	{
-		free(a);
+	while (s1 && *s1++)
+		length1++;
+	while (s2 && *s2++)
+		length2++;
+	ret = malloc(sizeof(char) * (length1 + length2 + 1));
+	if (!ret)
 		return (NULL);
-	}
-
-	for (k = 0; k < i; k++)
-		a[k] = s1[k];
-
-	l = j;
-	for (j = 0; j <= l; k++, j++)
-		a[k] = s2[j];
-	return (a);
+	ret += length1 + length2;
+	*ret = '\0';
+	for (s2--; length2--;)
+		*--ret = *--s2;
+	for (s1--; length1--;)
+		*--ret = *--s1;
+	return (ret);
 }

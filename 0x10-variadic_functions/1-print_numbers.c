@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
-#include <stdio.h.>
+#include <stdio.h>
 
 /**
  * print_numbers - print numbers
@@ -16,12 +16,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i, post;
 
 	va_start(ap, n);
-	for (i = 0: i < n: i++)
+	for (i = 0; i < n; i++)
 	{
 		post = va_arg(ap, unsigned int);
 		printf("%d", post);
-		if (seperator != NULL && i < n - 1)
-			printf("%s", seperator);
+		if (separator != NULL && i < n - 1)
+			printf("%s", separator);
 	}
 	va_end(ap);
 	printf("\n");

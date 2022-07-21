@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * get_endianness - checks the endianness
@@ -7,10 +7,10 @@
  */
 int get_endianness(void)
 {
-	int x;
-	char *y;
+	int i;
+	char *j;
 
-	x = 1;
-	y = (char *)&x;
-	return (*y);
+	i = 1;
+	j = (char *)&i;
+	return (*j);
 }
